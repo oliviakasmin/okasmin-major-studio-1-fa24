@@ -78,12 +78,10 @@ console.log("museums2", museums2);
 // Task
 // Write a function to add a new museum object, with properties URL and year, to an existing museums object. Call it on museums2
 function addAMuseum(museums, newName, newURL, newYear) {
-	/* COMPLETE ME */
 	museums[newName] = {
 		URL: newURL,
 		year: newYear,
 	};
-
 	return museums;
 }
 
