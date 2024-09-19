@@ -1,5 +1,7 @@
 <h1>Smithsonian Open Access - Quantitative Questions and Sketches</h1>
 
+mock: https://www.figma.com/proto/UOoIUcq2gy1NIllk4XFN0I/NPG-Mock?node-id=0-1&t=ZshIg5BhjGfIsvgC-1
+
 <h3>Who takes up space? Paintings in the NPG</h3>
 
 Scale plays a huge role in viewing works in a museum in person - larger works typically grab ones attention quickly and require more wall space to display. In portraiture, especially painting, larger works are also generally more expensive to commission. Online, typically all works are displayed as the same size in thumbnails, which flattens these initial impressions. This visualization aims to answer the question of who takes up space in the NPG by displaying paintings scaled in relation to one another by their actual dimensions - this is similar to a bubble chart, but each work is represented by a scaled image. The question of space can be interpreted as its physical space, or as relative representation in the collection. There is a filter to include works that are currently on view and works that are not currently on view, which is an additional layer of which works get to be seen in person. Clicking on an artwork opens up a modal which is a consistent size for each work regardless of its scaled size. From the modal view you can click on a link to open up a page for the single object and see all of its details.  
