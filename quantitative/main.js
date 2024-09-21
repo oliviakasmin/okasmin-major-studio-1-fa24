@@ -1,51 +1,56 @@
 import "./style.css";
 import * as d3 from "d3";
+import Masonry from "masonry-layout";
 import { analyzeData } from "./utils";
 
 const getData = async () => {
-	const data = await d3.json("../fetch_download_data/data_all_dims.json");
+	const data = await d3.json("data_all_dims.json");
 	return data;
 };
+
+const margin = { left: 20 };
+const widthLeftColumn = 200;
 
 const data = await getData();
 
 const analyzedDatad = analyzeData(data);
-const testData = analyzedDatad.slice(0, 10);
+// const testData = analyzedDatad.slice(0, 10);
 
-// const margin = { top: 100, right: 50, bottom: 100, left: 80 };
-const width = 1400;
-const height = 700;
+const leftColumnDiv = d3.select(".left-column");
+leftColumnDiv
+	.style("width", `${widthLeftColumn + margin.left}px`)
+	.style("background-color", "black");
 
-// Add images
+// style person
+const personHeight = 167.64; //5.5 ft = 167.64 cm
 
-const imagesGrid = d3.select("#images-grid");
-imagesGrid.attr("width", width).attr("height", height);
+const personSvg = d3.select(".person");
+personSvg.attr("height", personHeight);
 
-imagesGrid
-	.append("g")
-	.selectAll("image")
-	.data(testData)
-	.join("image")
-	.attr("xlink:href", (d) => d.thumbnail)
-	// .attr("x", (d, i) => {
-	// 	if (i >= 10) {
-	// 		i = i % 10;
-	// 	}
-	// 	return 100 + 150 * i;
-	// })
-	// .attr("y", (d, i) => {
-	// 	console.log(i);
-	// 	if (i < 10) {
-	// 		return 10;
-	// 	}
-	// 	if (i >= 10 && i < 20) {
-	// 		return 250;
-	// 	}
-	// 	if (i >= 20 && i < 30) {
-	// 		return 500;
-	// 	}
-	// 	return 600;
-	// })
+const personPos = 982 - personHeight - 50;
+
+const personDiv = d3.select(".person-div");
+personDiv
+	.style("width", "100px")
+	.style("translate", `0 ${personPos}px`)
+	.style("margin-left", `${margin.left}px`);
+
+const gridDiv = d3.select(".grid");
+gridDiv
+	.selectAll("div")
+	.data(analyzedDatad)
+	.join("div")
 	.attr("class", "grid-item")
-	.attr("height", (d) => d.cleanedDimensions.height)
-	.attr("width", (d) => d.cleanedDimensions.width);
+	.append("img")
+	.attr("src", (d) => d.thumbnail)
+	.attr("class", "grid-item")
+	.attr("height", (d) => `${d.cleanedDimensions.height}px`)
+	.attr("width", (d) => `${d.cleanedDimensions.width}`)
+	.style("margin-left", `${widthLeftColumn + margin.left}px`);
+
+const grid = d3.select(".grid");
+const msnry = new Masonry(grid.node(), {
+	itemSelector: ".grid-item",
+	columnWidth: screen.width,
+	margin: 0,
+});

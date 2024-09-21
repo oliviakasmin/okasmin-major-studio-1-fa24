@@ -21,4 +21,35 @@ body {
 	font-family: "neulis-sans", sans-serif;
 	font-weight: 300;
 	font-style: normal;
+	display: block;
+}
+
+.grid {
+	padding-top: 60px; /* Adjust according to the height of the header */
+	content: "";
+	display: block;
+	position: fixed;
+}
+
+h1 {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	background-color: #242424;
+	margin: 0;
+	border-bottom: 0.5rem solid;
+	border-top: 0.5rem solid;
+	padding-top: 10px;
+}
+
+.person-div {
+	display: block;
+	position: fixed;
+}
+
+.column-div {
+	z-index: 900;
+	display: block;
+	position: fixed;
 }

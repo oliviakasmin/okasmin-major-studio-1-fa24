@@ -6,11 +6,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://use.typekit.net/cdq0pjp.css" />
 		<title>App</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.1/masonry.pkgd.min.js"></script>
+		<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 	</head>
 	<body>
 		<div id="app"></div>
 		<h1>Who takes up space? Painted portraits in the NPG</h1>
-		<svg id="images-grid"></svg>
+		<div class="left-column">
+			<div class="person-div">
+				<img class="person" src="./public/person.svg" />
+			</div>
+		</div>
+		<div class="grid"></div>
 		<script type="module" src="/main.js"></script>
 	</body>
 </html>
