@@ -76,7 +76,6 @@ function addObject(objectData) {
 	const { descriptiveNonRepeating, freetext } = content;
 
 	// need to check if have all fields below, if not, don't add to array
-
 	const { id, title } = objectData;
 	const { record_link, online_media } = descriptiveNonRepeating;
 	const { physicalDescription, name, setName } = freetext;
@@ -111,7 +110,7 @@ function addObject(objectData) {
 		physicalDescription &&
 		thumbnail &&
 		name &&
-		dimensions &&
+		dimensions.length &&
 		medium &&
 		setName &&
 		imageResources
