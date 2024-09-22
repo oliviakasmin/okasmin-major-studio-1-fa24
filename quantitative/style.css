@@ -9,7 +9,7 @@
 
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+	background-color: black;
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -22,13 +22,26 @@ body {
 	font-weight: 300;
 	font-style: normal;
 	display: block;
+	overflow-x: scroll;
+	overflow-y: scroll;
 }
 
 .grid {
 	padding-top: 60px; /* Adjust according to the height of the header */
 	content: "";
-	display: block;
-	position: fixed;
+	/* display: block; */
+	/* position: fixed;*/
+	z-index: 1;
+	display: flex;
+	/* flex-direction: column; */
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: flex-start;
+}
+
+.grid-item {
+	margin: 2px;
+	align-self: center;
 }
 
 h1 {
@@ -36,16 +49,22 @@ h1 {
 	top: 0;
 	width: 100%;
 	z-index: 1000;
-	background-color: #242424;
+	background-color: black;
 	margin: 0;
-	border-bottom: 0.5rem solid;
-	border-top: 0.5rem solid;
+	border-bottom: 0.1rem solid;
+	border-top: 0.1rem solid;
 	padding-top: 10px;
 }
 
 .person-div {
+	position: fixed;
+	bottom: 0%;
+}
+
+.checkboxes-div {
 	display: block;
 	position: fixed;
+	translate: 0 300px;
 }
 
 .column-div {
@@ -53,3 +72,129 @@ h1 {
 	display: block;
 	position: fixed;
 }
+
+.left-column {
+	display: flex;
+	z-index: 800;
+}
+
+.content {
+	display: flex;
+}
+
+img {
+	margin: 0;
+}
+
+/* modal stuff below */
+
+.modal {
+	margin-top: 100px;
+
+	/* This way it could be display flex or grid or whatever also. */
+	display: block;
+
+	/* Probably need media queries here */
+	/* width: 600px; */
+	max-width: 100%;
+
+	height: 100%;
+	max-height: 100%;
+
+	/* it was fixed in the original example, but it doesn't seem to work correctly on Observable */
+	position: absolute;
+
+	z-index: 100;
+
+	left: 50%;
+	top: 50%;
+
+	/* Use this for centering if unknown width/height */
+	transform: translate(-50%, -50%);
+
+	/* If known, negative margins are probably better (less chance of blurry text). */
+	/* margin: -200px 0 0 -200px; */
+
+	background: white;
+	box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
+}
+.closed {
+	display: none;
+}
+
+.modal-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 50;
+
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-guts {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding: 20px 50px 20px 20px;
+}
+
+.modal .close-button {
+	cursor: pointer;
+
+	position: absolute;
+
+	/* don't need to go crazy with z-index here, just sits over .modal-guts */
+	z-index: 1;
+
+	top: 20px;
+
+	/* needs to look OK with or without scrollbar */
+	right: 20px;
+
+	border: 0;
+	background: black;
+	color: white;
+	padding: 5px 10px;
+	font-size: 1.3rem;
+}
+
+/* .fadeIn {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.fadeOut {
+	opacity: 0;
+	display: none;
+	animation-name: fadeOutOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
+}
+
+@keyframes fadeOutOpacity {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		display: none;
+	}
+} */

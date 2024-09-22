@@ -12,12 +12,28 @@
 	<body>
 		<div id="app"></div>
 		<h1>Who takes up space? Painted portraits in the NPG</h1>
-		<div class="left-column">
-			<div class="person-div">
-				<img class="person" src="./public/person.svg" />
+		<div class="content">
+			<div class="left-column">
+				<!-- <div class="checkboxes-div">
+					<div>
+						<input type="checkbox" id="onView" class="checkbox" checked />
+						<label for="scales">On View</label>
+					</div>
+					<div>
+						<input type="checkbox" id="notOnView" class="checkbox" checked />
+						<label for="horns">Not On View</label>
+					</div>
+				</div> -->
+
+				<div class="person-div">
+					<img class="person" src="./public/person.svg" />
+				</div>
 			</div>
+			<div class="modal-overlay" id="my-modal-overlay"></div>
+			<div class="modal" id="my-modal"></div>
+			<div class="grid"></div>
+			<svg id="chart"></svg>
 		</div>
-		<div class="grid"></div>
 		<script type="module" src="/main.js"></script>
 	</body>
 </html>
