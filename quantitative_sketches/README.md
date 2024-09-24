@@ -1,5 +1,14 @@
 <h1>Smithsonian Open Access - Quantitative Questions and Sketches</h1>
 
+visualization: https://oliviakasmin.github.io/okasmin-major-studio-1-fa24/quantitative_sketches/visualization/
+<br>
+site view:
+<img width="1508" alt="Screenshot 2024-09-23 at 10 06 04 PM" src="https://github.com/user-attachments/assets/0a2eb965-c19e-4b1f-96cb-2fb390e1c0ec">
+<br>
+modal detail view:
+<img width="1508" alt="Screenshot 2024-09-23 at 10 07 24 PM" src="https://github.com/user-attachments/assets/f4d07588-fc62-4447-bdd3-d39247c9f876">
+<br>
+<br>
 mock: https://www.figma.com/proto/UOoIUcq2gy1NIllk4XFN0I/NPG-Mock?node-id=0-1&t=ZshIg5BhjGfIsvgC-1
 
 <h3>Who takes up space? Paintings in the NPG</h3>
