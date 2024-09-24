@@ -27,13 +27,10 @@ body {
 }
 
 .grid {
-	padding-top: 60px; /* Adjust according to the height of the header */
+	padding-top: 120px; /* Adjust according to the height of the header */
 	content: "";
-	/* display: block; */
-	/* position: fixed;*/
 	z-index: 1;
 	display: flex;
-	/* flex-direction: column; */
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	align-items: flex-start;
@@ -42,29 +39,51 @@ body {
 .grid-item {
 	margin: 2px;
 	align-self: center;
+	cursor: pointer;
+}
+
+.grid-item img {
+	box-shadow: 0 0 0 0.2px rgba(211, 211, 211, 0.5);
+}
+
+.grid-item:hover {
+	opacity: 0.8;
 }
 
 h1 {
 	position: fixed;
-	top: 0;
+	top: 1%;
 	width: 100%;
-	z-index: 1000;
 	background-color: black;
 	margin: 0;
-	border-bottom: 0.1rem solid;
-	border-top: 0.1rem solid;
+	border-bottom: 0.03rem solid;
+	border-top: 0.03rem solid;
 	padding-top: 10px;
+	padding-left: 20px;
+	font-weight: 300;
+}
+
+.header {
+	background-color: black;
+	height: 80px;
+	width: 100%;
+	z-index: 1000;
+	position: fixed;
 }
 
 .person-div {
 	position: fixed;
 	bottom: 0%;
+	display: flex;
+	width: 200px;
+	align-items: flex-end;
 }
 
-.checkboxes-div {
-	display: block;
-	position: fixed;
-	translate: 0 300px;
+.person-label {
+	transform: rotate(-90deg);
+	transform-origin: left top;
+	font-weight: 100;
+	margin-bottom: -10px;
 }
 
 .column-div {
@@ -86,115 +105,75 @@ img {
 	margin: 0;
 }
 
-/* modal stuff below */
-
-.modal {
-	margin-top: 100px;
-
-	/* This way it could be display flex or grid or whatever also. */
-	display: block;
-
-	/* Probably need media queries here */
-	/* width: 600px; */
-	max-width: 100%;
-
-	height: 100%;
-	max-height: 100%;
-
-	/* it was fixed in the original example, but it doesn't seem to work correctly on Observable */
-	position: absolute;
-
-	z-index: 100;
-
-	left: 50%;
-	top: 50%;
-
-	/* Use this for centering if unknown width/height */
-	transform: translate(-50%, -50%);
-
-	/* If known, negative margins are probably better (less chance of blurry text). */
-	/* margin: -200px 0 0 -200px; */
-
-	background: white;
-	box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
-}
-.closed {
+.jw-modal {
 	display: none;
-}
-
-.modal-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 50;
-
-	background: rgba(0, 0, 0, 0.6);
-}
-
-.modal-guts {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	position: fixed;
+	inset: 0;
+	z-index: 10000;
+	background-color: rgba(0, 0, 0, 0.75);
+	padding: 40px;
 	overflow: auto;
-	padding: 20px 50px 20px 20px;
+	padding-top: 60px;
+	border: #fff;
 }
 
-.modal .close-button {
-	cursor: pointer;
+.jw-modal.open {
+	display: block;
+}
 
-	position: absolute;
+.jw-modal-body {
+	padding: 20px;
+	background-color: black;
 
-	/* don't need to go crazy with z-index here, just sits over .modal-guts */
-	z-index: 1;
+	overflow-x: scroll;
+	overflow-y: scroll;
+}
 
-	top: 20px;
+body.jw-modal-open {
+	overflow: hidden;
+}
 
-	/* needs to look OK with or without scrollbar */
-	right: 20px;
-
-	border: 0;
-	background: black;
+.jw-modal button {
+	background-color: rgba(0, 0, 0, 0.75);
 	color: white;
-	padding: 5px 10px;
-	font-size: 1.3rem;
+	border: none;
+	height: 32px;
+	width: 32px;
+	margin: 8px;
+	padding: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
-/* .fadeIn {
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 0.5s;
+.checkboxes-div {
+	display: block;
+	position: fixed;
+	translate: 0 300px;
 }
 
-@keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+#modal-text {
+	background-color: rgba(0, 0, 0, 0.75);
+	position: fixed;
+	color: white;
+	margin-left: 8px;
+	padding: 8px;
+	border-radius: 4px;
+	width: 200px;
 }
 
-.fadeOut {
-	opacity: 0;
-	display: none;
-	animation-name: fadeOutOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 0.5s;
+#modal-button-and-text {
+	position: fixed;
+	font-weight: 200;
 }
 
-@keyframes fadeOutOpacity {
-	0% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-		display: none;
-	}
-} */
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	text-decoration: underline;
+}

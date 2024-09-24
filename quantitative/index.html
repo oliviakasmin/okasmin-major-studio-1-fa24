@@ -11,26 +11,33 @@
 	</head>
 	<body>
 		<div id="app"></div>
-		<h1>Who takes up space? Painted portraits in the NPG</h1>
+		<div class="header">
+			<h1>
+				Who takes up space? Painted portraits in the National Portrait Gallery
+			</h1>
+		</div>
 		<div class="content">
 			<div class="left-column">
-				<!-- <div class="checkboxes-div">
-					<div>
-						<input type="checkbox" id="onView" class="checkbox" checked />
-						<label for="scales">On View</label>
-					</div>
-					<div>
-						<input type="checkbox" id="notOnView" class="checkbox" checked />
-						<label for="horns">Not On View</label>
-					</div>
-				</div> -->
-
 				<div class="person-div">
 					<img class="person" src="./public/person.svg" />
+					<div class="person-label"></div>
 				</div>
 			</div>
-			<div class="modal-overlay" id="my-modal-overlay"></div>
-			<div class="modal" id="my-modal"></div>
+			<div id="modal-2" class="jw-modal">
+				<div class="jw-modal-body">
+					<div id="modal-button-and-text">
+					<button id="close-button">
+						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="#ffffff"></path> </g></svg>
+					</button>
+					<div id="modal-text">
+						<div id="modal-title"></div>
+						<div id="modal-dims"></div>
+						<a target="_blank" id="modal-link">NPG link</a>
+					</div>
+					</div>
+					<img id="modal-image"></img>
+				</div>
+			</div>
 			<div class="grid"></div>
 			<svg id="chart"></svg>
 		</div>
