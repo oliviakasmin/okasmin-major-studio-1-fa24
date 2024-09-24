@@ -140,18 +140,21 @@ const createGrid = (analyzedData, widthLeftColumn, margin) => {
 };
 
 // save data to local storage
-const setDataStorage = async () => {
-	const data = await getData();
-	const { analyzedData } = analyzeData(data);
+// const setDataStorage = async () => {
+// 	const data = await getData();
+// 	const { analyzedData } = analyzeData(data);
 
-	if (!localStorage.getItem("data")) {
-		localStorage.setItem("data", JSON.stringify(analyzedData));
-	}
-};
+// 	if (!localStorage.getItem("data")) {
+// 		localStorage.setItem("data", JSON.stringify(analyzedData));
+// 	}
+// };
 
-setDataStorage();
+// setDataStorage();
 
-const analyzedData = JSON.parse(localStorage.getItem("data"));
+// const analyzedData = JSON.parse(localStorage.getItem("data"));
+
+const data = await getData();
+const { analyzedData } = analyzeData(data);
 
 // style left column
 const margin = { left: 20 };
